@@ -30,7 +30,7 @@ fn main() {
             Arg::new("output")
                 .long("output")
                 .short('o')
-                .help("Choose output format.")
+                .help("Choose output format")
                 .action(ArgAction::Set)
                 .value_parser(clap::builder::EnumValueParser::<Types>::new())
                 .required(false),
@@ -39,14 +39,14 @@ fn main() {
             Arg::new("quiet")
                 .long("quiet")
                 .short('q')
-                .help("Reduce output (will not print input).")
+                .help("Reduce output (will not print input)")
                 .action(ArgAction::SetTrue),
         )
         .arg(
             Arg::new("full")
                 .long("full")
                 .short('f')
-                .help("Display hex/octal as separate bytes (e.g. 0x7f.0x0.0x0.0x1).")
+                .help("Display hex/octal as separate bytes (e.g. 0x7f.0x0.0x0.0x1)")
                 .action(ArgAction::SetTrue),
         )
         .get_matches();

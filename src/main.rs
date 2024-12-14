@@ -17,10 +17,10 @@ fn main() {
     let matches = Command::new(crate_name!())
         .about(crate_description!())
         .version(crate_version!())
-        .help_template("{before-help}\n{name} {version}\n{usage-heading} {usage}\n\n{all-args}")
+        .help_template("{before-help}\n{about}\n\n{usage-heading} {usage}\n\n{all-args}")
         .arg(
             Arg::new("ip")
-                .help("IPs to convert")
+                .help("IPs to convert.")
                 .action(ArgAction::Append)
                 .value_parser(value_parser!(String))
                 .required(true)
@@ -30,7 +30,7 @@ fn main() {
             Arg::new("output")
                 .long("output")
                 .short('o')
-                .help("Choose output format")
+                .help("Choose output format.")
                 .action(ArgAction::Set)
                 .value_parser(clap::builder::EnumValueParser::<Types>::new())
                 .required(false),
@@ -39,14 +39,14 @@ fn main() {
             Arg::new("quiet")
                 .long("quiet")
                 .short('q')
-                .help("Reduce output (will not print input)")
+                .help("Reduce output (will not print input).")
                 .action(ArgAction::SetTrue),
         )
         .arg(
             Arg::new("full")
                 .long("full")
                 .short('f')
-                .help("Display hex/octal as separate bytes (e.g. 0x7f.0x0.0x0.0x1)")
+                .help("Display hex/octal as separate bytes (e.g. 0x7f.0x0.0x0.0x1).")
                 .action(ArgAction::SetTrue),
         )
         .get_matches();

@@ -12,7 +12,7 @@ Representing IP addresses in different numeric formats can be useful in a range 
 
 # Getting started
 
-### From source
+### Building from source
 
 To build `ipd` from source, you need Rust 1.80.0 or later. Clone the repository and use `cargo` to build and install it:
 
